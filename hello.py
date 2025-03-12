@@ -4,17 +4,11 @@ import pandas as pd
 
 connect()
 
-# Corrected: using defined data source name from preswald.toml
 df = get_df("list_of_orders")
 
-# If it fails, use pandas directly:
 if df is None:
-    try:
-        df = pd.read_csv("data/List of Orders.csv")
-        text("✅ Loaded data using pandas directly.")
-    except Exception as e:
-        text(f"⚠️ Error loading data with pandas: {e}")
-        df = None
+    df = pd.read_csv("data/List of Orders.csv")
+    text("✅ Loaded data using pandas directly.")
 
 if df is not None:
     text("# My Data Analysis App")
