@@ -1,0 +1,8 @@
+[project]
+name = "APP"
+slug = "myapp1"
+version = "0.1.0"
+entrypoint = "hello.py"
+
+[sources]
+list_of_orders = { type = "csv", path = "data/List of Orders.csv" }
